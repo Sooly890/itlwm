@@ -111,6 +111,7 @@
 #include <linux/kernel.h>
 #include <FwData.h>
 #include <crypto/sha1.h>
+#include <pexpert/pexpert.h>
 
 #include <IOKit/IOInterruptController.h>
 #include <IOKit/IOCommandGate.h>
