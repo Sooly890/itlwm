@@ -4056,7 +4056,8 @@ iwx_setup_he_rates(struct iwx_softc *sc)
     char user_wifi6[2];
     memset(user_wifi6, 0, sizeof(user_wifi6));
     PE_parse_boot_argn("itlwm_wifi6", user_override_cc, 2);
-    if (user_wifi6[0] == '1') {
+    if (user_wifi6[0] == '1')
+    {
       ic->ic_flags |= IEEE80211_F_HEON;
     }
     
