@@ -4053,7 +4053,12 @@ iwx_setup_he_rates(struct iwx_softc *sc)
     struct ieee80211com *ic = &sc->sc_ic;
     
     /* enable 11ax support */
-//    ic->ic_flags |= IEEE80211_F_HEON;
+    char user_wifi6[2];
+    memset(user_wifi6, 0, sizeof(user_wifi6));
+    PE_parse_boot_argn("itlwm_wifi6", user_override_cc, 2);
+    if (user_wifi6[0] == '1') {
+      ic->ic_flags |= IEEE80211_F_HEON;
+    }
     
     ic->ic_he_cap_elem = {
         .mac_cap_info[0] =
